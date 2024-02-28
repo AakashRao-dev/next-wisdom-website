@@ -40,15 +40,15 @@ export default function Form() {
 
   return (
     <>
-      <div className="bg-blueDark text-white py-16 px-12 max-w-[800px] rounded-lg flex flex-col gap-12">
+      <div className="bg-blueDark text-white py-16 px-12 max-w-[800px] h-[600px] flex flex-col justify-center gap-12 rounded overflow-hidden">
         {message && ( // Show the toast if message is not null
-          <div className="absolute bottom-[5%] sm:right-[5%] right-[2%] bg-blueDark text-white px-4 py-2 flex items-center gap-4">
+          <div className="absolute top-[5%] sm:right-[5%] right-[2%] bg-blueDark text-white px-4 py-2 flex items-center gap-4">
             {message}
             <span onClick={() => setMessage(null)}>&times;</span>
           </div>
         )}
 
-        <h2 className="text-white text-3xl md:text-4xl font-medium text-center">
+        <h2 className="text-white text-3xl md:text-4xl font-medium">
           Get in Touch With Us
         </h2>
         <form
@@ -56,7 +56,7 @@ export default function Form() {
           onSubmit={submitContact}
           className="flex flex-col gap-6 shadow-lg"
         >
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             <input
               required
               placeholder="Name"
