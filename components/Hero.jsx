@@ -12,7 +12,7 @@ export default function Hero() {
           We Deliver Personalized Guidance to Unleash Your Ultimate Potential,
           Empowering Futures Through Expert Coaching
         </p>
-        <div className="flex items-center gap-6">
+        <div className="w-[80%] flex flex-col xs:flex-row items-stretch xs:items-center gap-6">
           <a
             href="#get-in-touch"
             className="bg-blue text-white font-semibold px-5 py-3 rounded-md"

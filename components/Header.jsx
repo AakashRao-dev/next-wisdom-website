@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header>
       <div className="bg-blue p-3">
-        <div className="w-[90%] mx-auto flex gap-6 relative">
+        <div className="sm:w-[90%] sm:mx-auto flex xs:flex-row flex-col items-end gap-6 relative">
           <p className="ml-auto">
             <a
               href={`tel:+918839842061`}
@@ -53,7 +53,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/#courses" className="hover:text-blue">
+              <Link href="/#courses" scroll={false} className="hover:text-blue">
                 Courses
               </Link>
             </li>

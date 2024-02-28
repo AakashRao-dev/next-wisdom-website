@@ -17,8 +17,8 @@ export default function Info() {
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-2 gap-6 md:gap-12 md:basis-3/4 lg:basis-auto">
-          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70 hover:bg-white/5 flex flex-col gap-6 p-6 cursor-pointer">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-12 md:basis-3/4 lg:basis-auto">
+          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70 hover:bg-white/5 flex flex-col gap-6 sm:p-6 p-2 py-4 cursor-pointer">
             <Image
               src="/teach.svg"
               width={200}
@@ -26,7 +26,7 @@ export default function Info() {
               alt="teaching-svg-image"
               className="w-16 md:w-24 mx-auto"
             />
-            <h3 className="text-2xl text-center font-semibold px-2 xl:px-10">
+            <h3 className="text-2xl text-center font-semibold sm:px-2 xl:px-10">
               Personalized Teaching
             </h3>
             <p className="text-center text-clampSecond md:text-base">
@@ -35,7 +35,7 @@ export default function Info() {
             </p>
           </div>
 
-          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70  hover:bg-white/5 flex flex-col gap-6 p-6 cursor-pointer">
+          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70  hover:bg-white/5 flex flex-col gap-6 sm:p-6 p-2 py-4 cursor-pointer">
             <Image
               src="/resources.svg"
               width={200}
@@ -43,7 +43,7 @@ export default function Info() {
               alt="teaching-svg-image"
               className="w-16 md:w-24 mx-auto"
             />
-            <h3 className="text-2xl text-center font-semibold px-8 xl:px-10">
+            <h3 className="text-2xl text-center font-semibold sm:px-2 xl:px-10">
               Study Resources
             </h3>
             <p className="text-center text-clampSecond md:text-base">
