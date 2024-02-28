@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row justify-between items-center w-[90%] mx-auto pt-20 md:pt-0">
+    <section className="flex flex-col md:flex-row justify-between items-center w-[90%] min-h-[90vh] mx-auto py-20 md:pt-0">
       <div className="flex flex-col items-center md:items-start text-center md:text-left basis-3/4">
         <h1 className="text-clampMain text-black font-extrabold mb-6">
           Build Maximum Potential for your Future Success
