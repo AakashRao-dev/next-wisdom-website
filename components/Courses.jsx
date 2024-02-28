@@ -7,7 +7,7 @@ export default function Courses({ courses }) {
       <h2 className="text-3xl font-bold text-black">Courses Available</h2>
 
       {/* COURSES CARDS CONTAINER */}
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
         {courses.map((course, index) => (
           <div key={index} className="bg-white min-h-80 shadow-lg rounded-2xl">
             <h3 className="bg-black text-white w-3/4 text-center mx-auto px-4 py-3 text-lg rounded-b-3xl">
