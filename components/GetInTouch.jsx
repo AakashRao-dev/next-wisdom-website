@@ -25,7 +25,7 @@ export default function GetInTouch() {
 
       <div>
         <Image
-          src="/admissions.svg"
+          src="/admission.svg"
           width={600}
           height={400}
           className="h-[400px]"
