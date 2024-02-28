@@ -36,6 +36,7 @@ module.exports = {
         black: '#1E1E1E',
         gray: '#515151',
         grayLight: '#C8C8C8',
+        formItem: '#32475280',
         white: '#FFFFFF',
       },
       fontSize: {

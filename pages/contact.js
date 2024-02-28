@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import Form from '@/components/Form';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
   return (
@@ -9,10 +12,11 @@ export default function Contact() {
         <title>Get in Touch - Wisdom Coaching Classes</title>
       </Head>
 
-      <div className="flex min-h-screen flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mb-4">This is the Contact Page</h1>
-        <p>Contact-Form will come here!!</p>
-      </div>
+      <Header />
+      <section className="bg-white min-h-[80vh] flex justify-center items-center relative p-4">
+        <Form />
+      </section>
+      <Footer />
     </>
   );
 }
