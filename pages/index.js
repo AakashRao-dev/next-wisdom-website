@@ -5,8 +5,11 @@ import Info from '@/components/Info';
 import Courses from '@/components/Courses';
 import Testimonials from '@/components/Testimonial';
 import GetInTouch from '@/components/GetInTouch';
+import Footer from '@/components/Footer';
+import { coursesData } from '@/data/coursesData';
+import { testimonialsData } from '@/data/testimonialsData';
 
-export default function Home() {
+const Home = props => {
   return (
     <>
       <Head>
@@ -22,9 +25,36 @@ export default function Home() {
       <Header />
       <Hero />
       <Info />
-      <Courses />
-      <Testimonials />
+      <Courses courses={props.courses} />
+      <Testimonials testimonials={props.testimonials} />
       <GetInTouch />
+      <Footer />
     </>
   );
-}
+};
+
+export const getStaticProps = async () => {
+  try {
+    // Fetch courses data from an external source or use a default value
+    const courses = coursesData;
+    const testimonials = testimonialsData;
+
+    if (!courses || !testimonials) {
+      throw new Error('Failed to fetch data');
+    }
+
+    return {
+      props: {
+        courses: courses,
+        testimonials: testimonials,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    return {
+      notFound: true, // Or handle the error in a different way
+    };
+  }
+};
+
+export default Home;

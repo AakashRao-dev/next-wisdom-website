@@ -16,7 +16,7 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header className="sticky top-0 z-30">
       <div className="bg-blue p-3">
         <div className="sm:w-[90%] sm:mx-auto flex xs:flex-row flex-col items-end gap-6 relative">
           <p className="ml-auto">
@@ -40,7 +40,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="shadow-lg p-4">
+      <nav className="shadow-lg p-4 bg-white">
         <div className="w-[90%] mx-auto flex items-center justify-between">
           <Link href="/" className="text-blue text-2xl">
             LOGO
