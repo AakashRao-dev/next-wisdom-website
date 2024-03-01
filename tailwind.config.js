@@ -34,6 +34,7 @@ module.exports = {
         blueLight: '#E5F8FF',
         blueDark: '#263238',
         black: '#1E1E1E',
+        blackDark: '#000000',
         gray: '#515151',
         grayLight: '#C8C8C8',
         formItem: '#32475280',

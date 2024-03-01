@@ -3,7 +3,7 @@ import { getContacts } from '@/db/firebase';
 import { initAdmin } from '@/db/firebaseAdmin';
 import Comments from '@/components/Comments';
 
-const Admin = props => {
+const CheckContacts = props => {
   return (
     <>
       <Head>
@@ -34,4 +34,4 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default Admin;
+export default CheckContacts;

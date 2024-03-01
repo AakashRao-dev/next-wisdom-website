@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Admin = props => {
+const Admin = () => {
   return (
     <>
       <Head>

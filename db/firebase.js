@@ -1,4 +1,5 @@
 import { getFirestore } from 'firebase-admin/firestore';
+import { getStorage } from 'firebase-admin/storage';
 
 export const getContacts = async () => {
   const firestore = getFirestore();
@@ -13,4 +14,10 @@ export const getContacts = async () => {
   }));
 
   return documents;
+};
+
+export const getPDFFromStorage = async () => {
+  const bucket = getStorage().bucket();
+  const file = bucket.file('zerotomastery resources.pdf');
+  return file;
 };
