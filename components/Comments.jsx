@@ -1,4 +1,16 @@
 export default function Comments({ contacts }) {
+  const sentAtFormatted = new Date(contacts.sentAt).toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  });
+
+  console.log(sentAtFormatted);
+
   return (
     <>
       {contacts.map(contact => (

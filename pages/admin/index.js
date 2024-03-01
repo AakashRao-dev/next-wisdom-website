@@ -37,7 +37,7 @@ const Admin = () => {
           </Link>
 
           <Link
-            href="/admin/uploadpdf"
+            href="/admin/managepdf"
             className="bg-blueDark hover:bg-blueDark/40 text-white flex flex-col gap-3 p-6 max-w-80 rounded-xl"
           >
             <span className="text-2xl font-bold">PDF Uploads</span>

@@ -16,8 +16,8 @@ export const getContacts = async () => {
   return documents;
 };
 
-export const getPDFFromStorage = async () => {
+export const getAllPDFsFromStorage = async () => {
   const bucket = getStorage().bucket();
-  const file = bucket.file('zerotomastery resources.pdf');
-  return file;
+  const [files] = await bucket.getFiles();
+  return files;
 };
