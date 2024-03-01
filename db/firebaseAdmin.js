@@ -36,6 +36,6 @@ export async function initAdmin() {
   const app = createFirebaseAdminApp(params);
 
   // Initialize storage
-  const storage = await getStorage(app); // await here
+  const storage = getStorage(app); // await here
   return { app, storage };
 }

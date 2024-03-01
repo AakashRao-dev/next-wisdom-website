@@ -69,10 +69,10 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/login"
+                href="/signin"
                 className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
               >
-                Login
+                SignIn
               </Link>
             </li>
           </ul>
@@ -104,10 +104,10 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/login"
+                href="/signin"
                 className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
               >
-                Login
+                SignIn
               </Link>
             </li>
             <button onClick={toggleNav}>

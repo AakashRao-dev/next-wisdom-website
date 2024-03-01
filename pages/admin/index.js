@@ -3,7 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Admin = () => {
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+export default function Admin() {
+  const router = useRouter();
+
+  const session = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/signin');
+    },
+  });
+
   return (
     <>
       <Head>
@@ -22,6 +34,14 @@ const Admin = () => {
         </Link>
 
         <h1 className="text-4xl text-white">Admin Panel</h1>
+
+        <div className="text-white text-lg">{session?.data?.user?.email}</div>
+        <button
+          className="bg-blue text-black py-3 px-4 rounded-lg"
+          onClick={() => signOut()}
+        >
+          Logout
+        </button>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <Link
@@ -49,6 +69,6 @@ const Admin = () => {
       </section>
     </>
   );
-};
+}
 
-export default Admin;
+Admin.requireAuth = true;
