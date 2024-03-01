@@ -80,7 +80,7 @@ export default function Header() {
           <ul
             className={`${
               showNav ? 'flex' : 'hidden'
-            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-1/2 w-full h-full text-xl`}
+            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-[12%] w-full h-screen text-xl`}
           >
             <li>
               <Link href="/" className="hover:text-blue">
