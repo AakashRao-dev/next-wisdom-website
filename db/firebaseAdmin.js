@@ -1,4 +1,5 @@
 import admin from 'firebase-admin';
+import { getStorage } from 'firebase-admin/storage';
 
 function formatPrivateKey(key) {
   return key.replace(/\\n/g, '\n');
@@ -32,5 +33,9 @@ export async function initAdmin() {
     privateKey: process.env.FIREBASE_PRIVATE_KEY,
   };
 
-  return createFirebaseAdminApp(params);
+  const app = createFirebaseAdminApp(params);
+
+  // Initialize storage
+  const storage = await getStorage(app); // await here
+  return { app, storage };
 }

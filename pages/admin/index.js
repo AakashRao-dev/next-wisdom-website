@@ -17,7 +17,7 @@ const Admin = () => {
           href="/"
           className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute top-7 right-14 shadow-md shadow-blue/40 rounded"
         >
-          Go back to Homepage
+          Return to Homepage
           <FontAwesomeIcon icon={faRightToBracket} className="ml-3" />
         </Link>
 
