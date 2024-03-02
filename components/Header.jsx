@@ -18,7 +18,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-30">
+    <header className="sticky md:top-0 md:z-30 shadow-lg bg-whiite">
       <div className="bg-blue p-3">
         <div className="sm:w-[90%] sm:mx-auto flex xs:flex-row flex-col items-end gap-6 relative">
           <p className="ml-auto">
