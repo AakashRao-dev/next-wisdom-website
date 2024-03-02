@@ -1,21 +1,36 @@
 import { useState, useRef } from 'react';
-import { addDoc, collection, Timestamp } from 'firebase/firestore/lite';
+import { doc, setDoc } from 'firebase/firestore/lite';
 import { firestore } from '@/firebaseConfig';
 
 export const sendContactForm = async ({ name, email, comment }) => {
   try {
-    const ref = collection(firestore, 'contact');
-    await addDoc(ref, {
+    // Generate a unique ID for the contact
+    const contactId = generateUniqueId();
+
+    // Reference the document using the custom ID
+    const contactDocRef = doc(firestore, 'contact', contactId);
+
+    // Set the contact details in the document
+    await setDoc(contactDocRef, {
       name,
       email,
       comment,
-      sentAt: Timestamp.now().toDate(),
+      sentAt: new Date().toISOString(),
+      contactId: contactId,
     });
-    return { success: true };
+
+    return { success: true, id: contactId };
   } catch (err) {
     console.log(err);
-    return { success: false };
+    return { success: false, id: null };
   }
+};
+
+const generateUniqueId = () => {
+  // Generate a unique timestamp-based ID
+  const timestamp = new Date().getTime();
+  const uniqueId = '' + timestamp;
+  return uniqueId;
 };
 
 export default function Form() {
