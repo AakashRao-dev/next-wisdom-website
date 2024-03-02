@@ -39,6 +39,19 @@ const UploadPDF = () => {
         error => {
           // Error function
           console.error(error.message);
+          // Show toast message for error
+          toast.error(`Error: ${error.message}`, {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          });
+          setIsUploading(false); // Reset upload state
+          setUploadProgress(0); // Reset progress
         },
         () => {
           console.log('Upload Completed');

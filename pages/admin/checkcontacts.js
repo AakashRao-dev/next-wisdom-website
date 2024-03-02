@@ -6,8 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { getContacts } from '@/db/firebase';
 import { initAdmin } from '@/db/firebaseAdmin';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const CheckContacts = props => {
+  const router = useRouter();
+
+  const session = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/signin');
+    },
+  });
+
   return (
     <>
       <Head>

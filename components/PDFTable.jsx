@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function PDFTable({ pdfFilesData, showInputSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -10,28 +12,72 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
     pdfData.pdfName.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleDelete = async fileId => {
+  const handleDelete = async fileName => {
     try {
       const response = await fetch('/api/deletepdf', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ fileId }),
+        body: JSON.stringify({ fileName }), // Pass the file name for deletion
       });
       if (response.ok) {
         // Optionally, you can update the UI to reflect the deletion
         console.log('PDF file deleted successfully');
+        // Show toast message for successful deletion
+        toast.success('PDF file deleted successfully', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
       } else {
         console.error('Failed to delete PDF file');
+        toast.error('Failed to delete PDF file', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'dark',
+        });
       }
     } catch (error) {
       console.error('Error deleting PDF:', error);
+      toast.error('Error deleting PDF', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
     }
   };
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
       {showInputSearch && (
         <input
           type="text"
@@ -83,7 +129,7 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
               {pdfData.fileId && (
                 <td className="px-6 py-4">
                   <button
-                    onClick={() => handleDelete(pdfData.fileId)}
+                    onClick={() => handleDelete(pdfData.pdfName)}
                     className="flex items-center gap-2 underline font-bold"
                   >
                     Delete <FontAwesomeIcon icon={faTrash} />

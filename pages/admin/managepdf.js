@@ -7,8 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { initAdmin } from '@/db/firebaseAdmin';
 import { getAllPDFsFromStorage } from '@/db/firebase';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const ManagePDF = ({ pdfFilesData }) => {
+  const router = useRouter();
+
+  const session = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/signin');
+    },
+  });
+
   return (
     <>
       <Head>
@@ -80,7 +91,7 @@ export const getServerSideProps = async () => {
 
       return {
         pdfUrl: pdfUrl[0],
-        pdfName,
+        pdfName: pdfName,
         createdTimestamp,
         updatedTimestamp,
         fileId: file.id, // Include the file id for deletion
