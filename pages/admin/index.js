@@ -35,13 +35,17 @@ export default function Admin() {
 
         <h1 className="text-4xl text-white">Admin Panel</h1>
 
-        <div className="text-white text-lg">{session?.data?.user?.email}</div>
-        <button
-          className="bg-blue text-black py-3 px-4 rounded-lg"
-          onClick={() => signOut()}
-        >
-          Logout
-        </button>
+        <div className="flex items-center justify-between gap-6">
+          <div className="text-white bg-blueDark rounded-lg px-6 py-3 text-lg shadow-xl">
+            Current User: {session?.data?.user?.email}
+          </div>
+          <button
+            className="bg-red-500 text-white py-3 px-4 rounded-lg"
+            onClick={() => signOut()}
+          >
+            Logout
+          </button>
+        </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <Link

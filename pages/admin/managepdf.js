@@ -23,7 +23,7 @@ const ManagePDF = ({ pdfFilesData }) => {
         </h1>
 
         <UploadPDF />
-        <PDFTable pdfFilesData={pdfFilesData} />
+        <PDFTable pdfFilesData={pdfFilesData} showInputSearch={false} />
 
         <Link
           href="/"

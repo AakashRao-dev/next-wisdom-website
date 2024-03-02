@@ -1,6 +1,11 @@
+import Header from '@/components/Header';
+import PDFTable from '@/components/PDFTable';
 import Head from 'next/head';
 
-export default function Resources() {
+import { initAdmin } from '@/db/firebaseAdmin';
+import { getAllPDFsFromStorage } from '@/db/firebase';
+
+export default function Resources({ pdfFilesData }) {
   return (
     <>
       <Head>
@@ -9,11 +14,37 @@ export default function Resources() {
         <title>Study Materials - Wisdom Coaching Classes</title>
       </Head>
 
-      <div className="flex min-h-screen flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mb-4">
-          This is the Study Materials Page
-        </h1>
-      </div>
+      <Header />
+      <section className="bg-black min-h-[80vh] flex flex-col items-center gap-12 pt-12">
+        <PDFTable pdfFilesData={pdfFilesData} showInputSearch={true} />
+      </section>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  await initAdmin();
+  const files = await getAllPDFsFromStorage();
+
+  // Process each PDF file and gather required information
+  const pdfFilesData = await Promise.all(
+    files.map(async file => {
+      const pdfUrl = await file.getSignedUrl({
+        action: 'read',
+        expires: '03-01-2025',
+      });
+      const pdfName = file.id.replace(/%20/g, ' ');
+
+      return {
+        pdfUrl: pdfUrl[0],
+        pdfName,
+      };
+    })
+  );
+
+  return {
+    props: {
+      pdfFilesData,
+    },
+  };
+};

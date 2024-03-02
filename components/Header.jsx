@@ -61,7 +61,7 @@ export default function Header() {
             </li>
             <li>
               <Link href="/resources" className="hover:text-blue">
-                Study Materials
+                Resources
               </Link>
             </li>
             <li>
@@ -72,7 +72,7 @@ export default function Header() {
             <li>
               {session ? (
                 <button
-                  className="bg-blueDark text-white font-semibold px-5 py-2 rounded-md"
+                  className="bg-red-500 text-white font-semibold px-5 py-2 rounded-md"
                   onClick={() => signOut()}
                 >
                   Sign Out
@@ -105,7 +105,7 @@ export default function Header() {
             </li>
             <li>
               <Link href="/resources" className="hover:text-blue">
-                Study Materials
+                Resources
               </Link>
             </li>
             <li>
@@ -116,7 +116,7 @@ export default function Header() {
             <li>
               {session ? (
                 <button
-                  className="bg-white text-black font-semibold px-5 py-2 rounded-md"
+                  className="bg-red-500 text-white font-semibold px-5 py-2 rounded-md"
                   onClick={() => signOut()}
                 >
                   Sign Out
