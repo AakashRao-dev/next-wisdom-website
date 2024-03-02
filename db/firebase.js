@@ -21,6 +21,11 @@ export const getAllPDFsFromStorage = async () => {
   return files;
 };
 
+export const deletePDFFromStorage = async fileId => {
+  const bucket = getStorage().bucket();
+  await bucket.file(fileId).delete();
+};
+
 export const deleteContactFromFirestore = async contactId => {
   const firestore = getFirestore();
   const contactRef = firestore.collection('contact').doc(contactId);
