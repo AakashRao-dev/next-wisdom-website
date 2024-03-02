@@ -83,6 +83,7 @@ export const getServerSideProps = async () => {
         pdfName,
         createdTimestamp,
         updatedTimestamp,
+        fileId: file.id, // Include the file id for deletion
       };
     })
   );

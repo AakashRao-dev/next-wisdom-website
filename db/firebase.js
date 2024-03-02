@@ -21,3 +21,8 @@ export const getAllPDFsFromStorage = async () => {
   const [files] = await bucket.getFiles();
   return files;
 };
+
+export const deletePDFFromStorage = async fileId => {
+  const bucket = getStorage().bucket();
+  await bucket.file(fileId).delete();
+};

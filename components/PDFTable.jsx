@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function PDFTable({ pdfFilesData, showInputSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -9,6 +9,26 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
   const filteredPDFFiles = pdfFilesData.filter(pdfData =>
     pdfData.pdfName.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleDelete = async fileId => {
+    try {
+      const response = await fetch('/api/deletepdf', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fileId }),
+      });
+      if (response.ok) {
+        // Optionally, you can update the UI to reflect the deletion
+        console.log('PDF file deleted successfully');
+      } else {
+        console.error('Failed to delete PDF file');
+      }
+    } catch (error) {
+      console.error('Error deleting PDF:', error);
+    }
+  };
 
   return (
     <>
@@ -21,7 +41,7 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
           onChange={e => setSearchQuery(e.target.value)}
         />
       )}
-      <table className="w-full max-w-[900px] text-sm text-left text-grayLight p-4">
+      <table className="text-sm text-left text-grayLight p-4 min-w-[600px]">
         <thead className="text-xs uppercase bg-gray">
           <tr>
             <th className="px-6 py-3">File Name</th>
@@ -32,6 +52,10 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
               <th className="px-6 py-3">Updated</th>
             )}
             <th className="px-6 py-3">Download PDF</th>
+
+            {filteredPDFFiles.some(pdfData => pdfData.fileId) && (
+              <th className="px-6 py-3">Delete PDF</th>
+            )}
           </tr>
         </thead>
         <tbody className="bg-blackDark/30">
@@ -56,6 +80,16 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
                   Download <FontAwesomeIcon icon={faDownload} />
                 </a>
               </td>
+              {pdfData.fileId && (
+                <td className="px-6 py-4">
+                  <button
+                    onClick={() => handleDelete(pdfData.fileId)}
+                    className="flex items-center gap-2 underline font-bold"
+                  >
+                    Delete <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
