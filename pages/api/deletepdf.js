@@ -1,4 +1,7 @@
 import { deletePDFFromStorage } from '@/db/firebase'; // Import your delete function
+import { initAdmin } from '@/db/firebaseAdmin';
+
+initAdmin();
 
 export default async function handler(req, res) {
   if (req.method === 'DELETE') {
