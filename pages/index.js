@@ -35,7 +35,6 @@ const Home = props => {
 
 export const getStaticProps = async () => {
   try {
-    // Fetch courses data from an external source or use a default value
     const courses = coursesData;
     const testimonials = testimonialsData;
 
