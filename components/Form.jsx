@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { doc, setDoc } from 'firebase/firestore/lite';
 import { firestore } from '@/firebaseConfig';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const sendContactForm = async ({ name, email, comment }) => {
   try {
@@ -48,8 +50,29 @@ export default function Form() {
       setMessage('Thank you for your valuable comment!');
       formRef.current.reset();
       setTimeout(() => setMessage(null), 5000); // Remove message after 5 seconds
+      // Show success toast notification
+      toast.success('Form submitted successfully', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
     } else {
       setMessage('Something went wrong! Please try again');
+      toast.error('Failed to submit form', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
     }
   };
 
@@ -101,6 +124,19 @@ export default function Form() {
           </button>
         </form>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }
