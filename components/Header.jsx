@@ -7,9 +7,11 @@ import {
   faPhone,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { signOut, useSession } from 'next-auth/react';
 
 export default function Header() {
   const [showNav, setShowNav] = useState(false);
+  const { data: session } = useSession();
 
   function toggleNav() {
     setShowNav(!showNav);
@@ -46,7 +48,7 @@ export default function Header() {
             LOGO
           </Link>
 
-          <ul className="md:flex gap-12 ml-auto hidden">
+          <ul className="md:flex gap-12 ml-auto hidden items-center">
             <li>
               <Link href="/" className="hover:text-blue">
                 Home
@@ -68,19 +70,28 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/signin"
-                className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
-              >
-                SignIn
-              </Link>
+              {session ? (
+                <button
+                  className="bg-blueDark text-white font-semibold px-5 py-2 rounded-md"
+                  onClick={() => signOut()}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  href="/signin"
+                  className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
+                >
+                  Sign In
+                </Link>
+              )}
             </li>
           </ul>
 
           <ul
             className={`${
               showNav ? 'flex' : 'hidden'
-            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-[12%] w-full h-screen text-xl`}
+            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-[8%] w-full h-[110vh] text-xl`}
           >
             <li>
               <Link href="/" className="hover:text-blue">
@@ -103,12 +114,21 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/signin"
-                className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
-              >
-                SignIn
-              </Link>
+              {session ? (
+                <button
+                  className="bg-white text-black font-semibold px-5 py-2 rounded-md"
+                  onClick={() => signOut()}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  href="/signin"
+                  className="bg-blue text-white font-semibold px-5 py-2 rounded-md"
+                >
+                  Sign In
+                </Link>
+              )}
             </li>
             <button onClick={toggleNav}>
               <FontAwesomeIcon
