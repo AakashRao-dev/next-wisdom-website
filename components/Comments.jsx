@@ -72,7 +72,7 @@ export default function Comments({ contacts }) {
       {contacts.map(contact => (
         <div
           key={contact.sentAt}
-          className="bg-blueDark text-white flex flex-col gap-2 p-6 max-w-96 rounded-xl relative"
+          className="bg-blueDark text-white flex flex-col gap-2 p-6 max-w-96 w-full rounded-xl relative"
         >
           <p className="text-xl mb-2">Name: {contact.name}</p>
           <p className="text-base font-medium text-yellow-300">

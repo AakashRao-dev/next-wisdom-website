@@ -14,9 +14,11 @@ export default function Contact() {
       </Head>
 
       <Header />
-      <section className="bg-white min-h-screen flex justify-center flex-col lg:flex-row items-center relative px-4 py-16">
-        <Form />
-        <Maps />
+      <section className="bg-white py-8">
+        <div className="min-h-screen flex justify-center flex-col lg:flex-row items-center relative px-4 py-18">
+          <Form />
+          <Maps />
+        </div>
       </section>
       <Footer />
     </>

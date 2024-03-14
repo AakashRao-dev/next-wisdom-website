@@ -1,56 +1,25 @@
-import Image from 'next/image';
+import Card from './Card';
 
-export default function Info() {
+export default function Info({ cards }) {
   return (
-    <section className="bg-black text-white min-h-[70vh] flex justify-center items-center py-16 px-8">
-      <div className="xl:w-[90%] mx-auto flex flex-col gap-8 lg:flex-row justify-between items-center">
+    <section className="bg-black text-white min-h-[60vh] flex justify-center items-center py-16 px-8 text-center">
+      <div className="mx-auto flex flex-col gap-16 justify-between items-center">
         <div>
-          <h2 className="flex flex-col gap-3 md:gap-6">
-            <span className="block uppercase text-blue text-base tracking-[0.2em] font-medium">
+          <h2 className="flex flex-col gap-3">
+            <span className="block uppercase text-center text-blue text-lg tracking-[0.2em] font-medium">
               Welcome to a Transformative
             </span>
-            <span className="text-clampThird font-extrabold flex flex-col">
-              <span className="block">Journey with</span>
-              <span className="block">Wisdom Coaching Classes</span>
+            <span className="text-clampThird font-extrabold">
+              Journey with Wisdom Coaching Classes
             </span>
           </h2>
         </div>
 
         {/* CARDS */}
-        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-12 md:basis-3/4 lg:basis-auto">
-          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70 hover:bg-white/5 flex flex-col gap-6 sm:p-6 p-2 py-4 cursor-pointer">
-            <Image
-              src="/teach.svg"
-              width={200}
-              height={200}
-              alt="teaching-svg-image"
-              className="w-16 md:w-24 mx-auto"
-            />
-            <h3 className="text-2xl text-center font-semibold sm:px-2 xl:px-10">
-              Personalized Teaching
-            </h3>
-            <p className="text-center text-clampSecond md:text-base">
-              Individual attention is given to every Student irrespective of
-              one’s standing in the merit at any point of time
-            </p>
-          </div>
-
-          <div className="rounded-lg border-2 border-gray max-w-60 lg:max-w-72 xl:max-w-70  hover:bg-white/5 flex flex-col gap-6 sm:p-6 p-2 py-4 cursor-pointer">
-            <Image
-              src="/resources.svg"
-              width={200}
-              height={200}
-              alt="teaching-svg-image"
-              className="w-16 md:w-24 mx-auto"
-            />
-            <h3 className="text-2xl text-center font-semibold sm:px-2 xl:px-10">
-              Study Resources
-            </h3>
-            <p className="text-center text-clampSecond md:text-base">
-              We provide resources to facilitate comprehensive learning and
-              academic excellence, covering range of levels.
-            </p>
-          </div>
+        <div className="flex flex-wrap gap-6 justify-center">
+          {cards.map((card, index) => (
+            <Card key={index} card={card} />
+          ))}
         </div>
       </div>
     </section>

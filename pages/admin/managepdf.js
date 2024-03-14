@@ -28,8 +28,8 @@ const ManagePDF = ({ pdfFilesData }) => {
         <title>Upload and Check PDFs</title>
       </Head>
 
-      <section className="bg-black min-h-screen flex flex-col gap-12 items-center pt-12 p-4 relative">
-        <h1 className="text-4xl text-white">
+      <section className="bg-black min-h-screen flex flex-col md:gap-12 gap-4 items-center pt-12 p-4 relative">
+        <h1 className="text-clampThird text-center text-white mb-6">
           Upload, View and Download PDFs from Here
         </h1>
 
@@ -38,7 +38,7 @@ const ManagePDF = ({ pdfFilesData }) => {
 
         <Link
           href="/"
-          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute bottom-7 right-14 shadow-md shadow-blue/40 rounded"
+          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute bottom-7 right-6 shadow-md shadow-blue/40 rounded"
         >
           Return to Homepage
           <FontAwesomeIcon icon={faRightToBracket} className="ml-3" />

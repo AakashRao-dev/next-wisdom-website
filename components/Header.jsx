@@ -18,7 +18,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky md:top-0 md:z-30 shadow-lg bg-whiite">
+    <header className="sticky md:top-0 md:z-30 shadow-lg bg-white z-[100]">
       <div className="bg-blue p-3">
         <div className="sm:w-[90%] sm:mx-auto flex xs:flex-row flex-col items-end gap-6 relative">
           <p className="ml-auto">
@@ -44,8 +44,8 @@ export default function Header() {
 
       <nav className="shadow-lg p-4 bg-white">
         <div className="w-[90%] mx-auto flex items-center justify-between">
-          <Link href="/" className="text-blue text-2xl">
-            LOGO
+          <Link href="/" className="text-black font-bold text-base md:text-xl">
+            Wisdom Coaching Classes
           </Link>
 
           <ul className="md:flex gap-12 ml-auto hidden items-center">
@@ -91,7 +91,7 @@ export default function Header() {
           <ul
             className={`${
               showNav ? 'flex' : 'hidden'
-            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-[8%] w-full h-[110vh] text-xl`}
+            } flex-col justify-center items-center gap-12 ml-auto absolute bg-black text-white top-1/2 left-2/4 -translate-x-1/2 -translate-y-[10%] w-full h-[110vh] text-xl`}
           >
             <li>
               <Link href="/" className="hover:text-blue">

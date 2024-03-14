@@ -28,15 +28,17 @@ const CheckContacts = props => {
       </Head>
 
       <section className="bg-black text-white min-h-screen flex flex-col gap-12 items-center pt-12 relative">
-        <h1 className="text-4xl text-white">Check Comments & Contacts</h1>
+        <h1 className="text-4xl text-white text-clampThird text-center">
+          Check Comments & Contacts
+        </h1>
 
-        <div className="grid grid-cols-3 p-4 gap-8 mt-2">
+        <div className="flex flex-wrap p-4 gap-6 mt-2 w-full">
           <Comments contacts={props.contacts} />
         </div>
 
         <Link
           href="/"
-          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute bottom-7 right-14 shadow-md shadow-blue/40 rounded"
+          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute bottom-7 right-6 shadow-md shadow-blue/40 rounded"
         >
           Return to Homepage
           <FontAwesomeIcon icon={faRightToBracket} className="ml-3" />

@@ -87,59 +87,68 @@ export default function PDFTable({ pdfFilesData, showInputSearch }) {
           onChange={e => setSearchQuery(e.target.value)}
         />
       )}
-      <table className="text-sm text-left text-grayLight p-4 min-w-[600px]">
-        <thead className="text-xs uppercase bg-gray">
-          <tr>
-            <th className="px-6 py-3">File Name</th>
-            {filteredPDFFiles.some(pdfData => pdfData.createdTimestamp) && (
-              <th className="px-6 py-3">Created</th>
-            )}
-            {filteredPDFFiles.some(pdfData => pdfData.updatedTimestamp) && (
-              <th className="px-6 py-3">Updated</th>
-            )}
-            <th className="px-6 py-3">Download PDF</th>
-
-            {filteredPDFFiles.some(pdfData => pdfData.fileId) && (
-              <th className="px-6 py-3">Delete PDF</th>
-            )}
-          </tr>
-        </thead>
-        <tbody className="bg-blackDark/30">
-          {filteredPDFFiles.map((pdfData, index) => (
-            <tr key={index} className="border-b-2 border-gray">
-              <td className="px-6 py-4 font-medium text-white capitalize">
-                {pdfData.pdfName}
-              </td>
-              {pdfData.createdTimestamp && (
-                <td className="px-6 py-4">{pdfData.createdTimestamp}</td>
+      <div className="overflow-x-auto">
+        <table className="text-sm text-left text-grayLight p-4">
+          <thead className="text-xs uppercase bg-gray">
+            <tr>
+              <th className="px-4 py-3 sm:px-6">File Name</th>
+              {filteredPDFFiles.some(pdfData => pdfData.createdTimestamp) && (
+                <th className="px-4 py-3 sm:px-6 hidden md:table-cell">
+                  Created
+                </th>
               )}
-              {pdfData.updatedTimestamp && (
-                <td className="px-6 py-4">{pdfData.updatedTimestamp}</td>
+              {filteredPDFFiles.some(pdfData => pdfData.updatedTimestamp) && (
+                <th className="px-4 py-3 sm:px-6 hidden md:table-cell">
+                  Updated
+                </th>
               )}
-              <td className="px-6 py-4">
-                <a
-                  href={pdfData.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 underline font-bold"
-                >
-                  Download <FontAwesomeIcon icon={faDownload} />
-                </a>
-              </td>
-              {pdfData.fileId && (
-                <td className="px-6 py-4">
-                  <button
-                    onClick={() => handleDelete(pdfData.pdfName)}
-                    className="flex items-center gap-2 underline font-bold"
-                  >
-                    Delete <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </td>
+              <th className="px-4 py-3 sm:px-6">Download PDF</th>
+              {filteredPDFFiles.some(pdfData => pdfData.fileId) && (
+                <th className="px-4 py-3 sm:px-6">Delete PDF</th>
               )}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-blackDark/30">
+            {filteredPDFFiles.map((pdfData, index) => (
+              <tr key={index} className="border-b-2 border-gray">
+                <td className="px-4 py-3 sm:px-6 font-medium text-white capitalize">
+                  {pdfData.pdfName}
+                </td>
+                {pdfData.createdTimestamp && (
+                  <td className="px-4 py-3 sm:px-6 hidden md:table-cell">
+                    {pdfData.createdTimestamp}
+                  </td>
+                )}
+                {pdfData.updatedTimestamp && (
+                  <td className="px-4 py-3 sm:px-6 hidden md:table-cell">
+                    {pdfData.updatedTimestamp}
+                  </td>
+                )}
+                <td className="px-4 py-3 sm:px-6">
+                  <a
+                    href={pdfData.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 underline font-bold"
+                  >
+                    Download <FontAwesomeIcon icon={faDownload} />
+                  </a>
+                </td>
+                {pdfData.fileId && (
+                  <td className="px-4 py-3 sm:px-6">
+                    <button
+                      onClick={() => handleDelete(pdfData.pdfName)}
+                      className="flex items-center gap-2 underline font-bold"
+                    >
+                      Delete <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

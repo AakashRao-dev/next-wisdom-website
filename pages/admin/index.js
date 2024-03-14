@@ -24,10 +24,10 @@ export default function Admin() {
         <title>Admin Page - Wisdom Coaching Classes</title>
       </Head>
 
-      <section className="bg-black min-h-screen flex flex-col gap-12 items-center pt-12 relative">
+      <section className="bg-black min-h-screen flex flex-col gap-12 items-center pt-7 relative">
         <Link
           href="/"
-          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute top-7 right-14 shadow-md shadow-blue/40 rounded"
+          className="bg-blue text-black text-clampSecond font-bold px-4 py-3 absolute bottom-4 right-6 shadow-md shadow-blue/40 rounded"
         >
           Return to Homepage
           <FontAwesomeIcon icon={faRightToBracket} className="ml-3" />
@@ -35,8 +35,8 @@ export default function Admin() {
 
         <h1 className="text-4xl text-white">Admin Panel</h1>
 
-        <div className="flex items-center justify-between gap-6">
-          <div className="text-white bg-blueDark rounded-lg px-6 py-3 text-lg shadow-xl">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-white bg-blueDark rounded-lg px-6 py-3 text-base md:text-lg shadow-xl">
             Current User: {session?.data?.user?.email}
           </div>
           <button

@@ -8,6 +8,7 @@ import GetInTouch from '@/components/GetInTouch';
 import Footer from '@/components/Footer';
 import { coursesData } from '@/data/coursesData';
 import { testimonialsData } from '@/data/testimonialsData';
+import { cardsData } from '@/data/cardsData';
 
 const Home = props => {
   return (
@@ -24,7 +25,7 @@ const Home = props => {
 
       <Header />
       <Hero />
-      <Info />
+      <Info cards={props.cards} />
       <Courses courses={props.courses} />
       <Testimonials testimonials={props.testimonials} />
       <GetInTouch />
@@ -37,8 +38,9 @@ export const getStaticProps = async () => {
   try {
     const courses = coursesData;
     const testimonials = testimonialsData;
+    const cards = cardsData;
 
-    if (!courses || !testimonials) {
+    if (!courses || !testimonials || !cards) {
       throw new Error('Failed to fetch data');
     }
 
@@ -46,6 +48,7 @@ export const getStaticProps = async () => {
       props: {
         courses: courses,
         testimonials: testimonials,
+        cards: cards,
       },
     };
   } catch (error) {

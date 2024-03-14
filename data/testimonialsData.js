@@ -1,26 +1,27 @@
 export const testimonialsData = [
   {
     quote:
-      'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.',
-    name: 'Charles Dickens',
+      'Enrolling in Wisdom Coaching Classes was the best decision I made for my academic journey. The personalized guidance and expert coaching helped me not only excel in my exams but also build a strong foundation for my future endeavors.',
+    name: 'Gaurav Sheth',
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: 'William Shakespeare',
-  },
-  {
-    quote: 'All that we see or seem is but a dream within a dream.',
-    name: 'Edgar Allan Poe',
+      "Wisdom Coaching Classes provided me with the support and resources I needed to succeed. The faculty's dedication and commitment to student success truly made a difference in my learning experience",
+    name: 'Ananya Patel',
   },
   {
     quote:
-      'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.',
-    name: 'Jane Austen',
+      "I can't thank Wisdom Coaching Classes enough for their exceptional teaching methods and comprehensive course materials. The weekly tests and regular assessments helped me stay on track and motivated throughout my preparation",
+    name: 'Rohan Sharma',
   },
   {
     quote:
-      'Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.',
-    name: 'Herman Melville',
+      'The support provided by Wisdom Coaching Classes was invaluable. Whether it was clarifying doubts or providing additional study material, the instructors were always available to assist me every step of the way',
+    name: 'Niharika Singh',
+  },
+  {
+    quote:
+      "Attending the free demo classes at Wisdom Coaching Classes gave me a glimpse into their teaching approach and convinced me to enroll. I'm grateful for the enriching learning experience and the supportive environment that helped me achieve my academic goals.",
+    name: 'Rajesh Kumar',
   },
 ];

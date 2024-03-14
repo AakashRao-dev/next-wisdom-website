@@ -11,10 +11,12 @@ export default function GetInTouch() {
             <span className="block leading-tight">Rolling Admissions</span>
             <span className="block">Now Open</span>
           </h2>
-          <p className="text-xl">Get in touch with us to discuss it:</p>
+          <p className="text-clampSecond">
+            Get in touch with us to discuss it:
+          </p>
           <a
             href={`tel:+918839842061`}
-            className="flex gap-2 justify-center items-center sm:mx-0 mx-auto text-blue border-2 border-blue px-4 py-3 w-60"
+            className="flex gap-2 justify-center items-center sm:mx-0 mx-auto text-blue border-2 border-blue hover:bg-blue hover:text-white transition-all px-4 py-3 w-60"
           >
             <FontAwesomeIcon icon={faPhone} />
             <span className="underline text-lg font-medium">

@@ -74,7 +74,7 @@ const UploadPDF = () => {
   };
 
   return (
-    <div className="flex gap-7">
+    <div className="flex flex-col md:flex-row gap-7">
       <input
         type="file"
         onChange={handleChange}
@@ -84,7 +84,7 @@ const UploadPDF = () => {
       />
       <button
         onClick={handleUpload}
-        className="px-4 py-2 text-black font-medium bg-blue rounded-lg flex items-center gap-3"
+        className="px-4 py-2 text-black font-medium bg-blue rounded-lg flex justify-center items-center gap-3"
         disabled={isUploading}
       >
         {isUploading ? `Uploading ${uploadProgress.toFixed(2)}%` : 'Upload'}
