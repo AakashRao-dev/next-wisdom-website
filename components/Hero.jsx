@@ -39,11 +39,8 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div>
-          <Lottie
-            options={defaultOptions}
-            className="h-[550px] shrink-0 hidden lg:block"
-          />
+        <div className="hidden lg:block">
+          <Lottie options={defaultOptions} className="h-[550px] shrink-0" />
         </div>
       </div>
     </section>
