@@ -39,7 +39,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div>
           <Lottie options={defaultOptions} className="h-[550px] shrink-0" />
         </div>
       </div>

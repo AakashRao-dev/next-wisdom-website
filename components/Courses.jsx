@@ -1,7 +1,7 @@
 export default function Courses({ courses }) {
   return (
     <section
-      className="bg-blueLight flex flex-col justify-center items-center gap-16 pt-16 pb-0 px-8 overflow-hidden relative"
+      className="bg-blueLight flex flex-col justify-center items-center gap-16 pt-16 pb-32 px-8 overflow-hidden relative"
       id="courses"
     >
       <h2 className="text-3xl font-bold text-black">Courses Available</h2>
@@ -22,7 +22,7 @@ export default function Courses({ courses }) {
         ))}
       </div>
 
-      <div className="bg-blueDark text-white w-full py-1 rounded">
+      <div className="bg-blueDark text-white w-full py-1 rounded overflow-hidden absolute bottom-0">
         <p className="relative animate-move flex gap-6 text-base">
           <span className="py-1 text-center">
             External Exam: IEO, IMO, NCO, NSO, NTSE, Concept building and Mental
