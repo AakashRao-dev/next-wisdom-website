@@ -18,11 +18,20 @@ module.exports = {
       animation: {
         scroll:
           'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+        move: 'move 20s linear infinite',
       },
       keyframes: {
         scroll: {
           to: {
             transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
+        move: {
+          '0%': {
+            left: '100%',
+          },
+          '100%': {
+            left: '-100%',
           },
         },
       },

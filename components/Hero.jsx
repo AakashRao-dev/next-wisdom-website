@@ -1,7 +1,17 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Lottie from 'react-lottie';
+import * as animationData from '../public/launch.json';
 
 export default function Hero() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    renderSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <section className="bg-white">
       <div className="bg-white flex flex-col lg:flex-row justify-between items-center w-[90%] min-h-[70vh] lg:min-h-[90vh] mx-auto py-20 md:pt-12 lg:pt-0">
@@ -30,13 +40,9 @@ export default function Hero() {
           </div>
         </div>
         <div>
-          <Image
-            src="/header-image.svg"
-            alt="hero-image"
-            width={800}
-            height={400}
+          <Lottie
+            options={defaultOptions}
             className="h-[550px] shrink-0 hidden lg:block"
-            priority={true}
           />
         </div>
       </div>
