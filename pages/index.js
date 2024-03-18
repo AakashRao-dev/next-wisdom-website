@@ -18,16 +18,39 @@ const Home = props => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>Wisdom Coaching Classes - Raipur</title>
         <meta
+          name="description"
+          content="Wisdom Coaching Classes in Raipur provides Personalized Guidance and Expert Coaching"
+        />
+        {/* Facebook Meta Tags */}
+        <meta
+          property="og:url"
+          content="https://www.wisdomcoachingclasses.com/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Wisdom Coaching Classes - Raipur" />
+        <meta
+          property="og:description"
+          content="Wisdom Coaching Classes in Raipur provides Personalized Guidance and Expert Coaching"
+        />
+        <meta
           property="og:image"
           content="https://wisdomcoachingclasses.com/api/og"
         />
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="wisdomcoachingclasses.com" />
         <meta
-          property="twitter:image"
-          content="https://wisdomcoachingclasses.com/api/og"
+          property="twitter:url"
+          content="https://www.wisdomcoachingclasses.com/"
+        />
+        <meta name="twitter:title" content="Wisdom Coaching Classes - Raipur" />
+        <meta
+          name="twitter:description"
+          content="Wisdom Coaching Classes in Raipur provides Personalized Guidance and Expert Coaching"
         />
         <meta
-          name="description"
-          content="Wisdom Coaching Classes in Raipur provides Personalized Guidance and Expert Coaching"
+          name="twitter:image"
+          content="https://wisdomcoachingclasses.com/api/og"
         />
       </Head>
 
