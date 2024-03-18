@@ -18,6 +18,10 @@ const Home = props => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>Wisdom Coaching Classes - Raipur</title>
         <meta
+          property="og:image"
+          content="https://wisdomcoachingclasses.com/api/static"
+        />
+        <meta
           name="description"
           content="Wisdom Coaching Classes in Raipur provides Personalized Guidance and Expert Coaching"
         />
