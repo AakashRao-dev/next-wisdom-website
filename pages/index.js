@@ -19,7 +19,11 @@ const Home = props => {
         <title>Wisdom Coaching Classes - Raipur</title>
         <meta
           property="og:image"
-          content="https://wisdomcoachingclasses.com/api/static"
+          content="https://wisdomcoachingclasses.com/api/og"
+        />
+        <meta
+          property="twitter:image"
+          content="https://wisdomcoachingclasses.com/api/og"
         />
         <meta
           name="description"
