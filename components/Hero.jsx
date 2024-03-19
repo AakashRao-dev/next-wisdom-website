@@ -40,10 +40,7 @@ export default function Hero() {
             >
               Get in Touch
             </a>
-            <Link
-              href="#courses"
-              className="text-black font-semibold rounded-md"
-            >
+            <Link href="#about" className="text-black font-semibold rounded-md">
               Know more about Us
             </Link>
           </div>

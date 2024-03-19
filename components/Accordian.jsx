@@ -11,7 +11,7 @@ function Accordian() {
       <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
 
       <Accordion type="multiple" collapsible="true" className="w-full md:w-1/2">
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-1" id="about">
           <AccordionTrigger className="text-lg md:text-2xl">
             About Us
           </AccordionTrigger>
@@ -53,7 +53,7 @@ function Accordian() {
             journey tailored to your needs. With a dedicated team of experienced
             faculty, comprehensive subject coverage, and a commitment to student
             success, we stand out as your ideal partner in academic excellence.
-            At Wisdom Coaching Classes, we don't just teach; we inspire and
+            At Wisdom Coaching Classes, we don&apos;t just teach; we inspire and
             empower you to achieve your academic goals and shape a brighter
             future. Choose us and unlock your full potential today.
           </AccordionContent>
