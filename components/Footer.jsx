@@ -3,14 +3,14 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-black text-white px-3 py-5 border-t-2 border-gray">
-      <nav className="flex flex-col md:flex-row gap-4 md:gap-8 justify-between xs:items-center w-4/5 mx-auto py-5">
+      <nav className="flex flex-col md:flex-row gap-6 justify-between items-center w-4/5 mx-auto py-5">
         <div>
           <Link href="/" className="text-white font-bold text-base md:text-xl">
             Wisdom Coaching Classes
           </Link>
         </div>
 
-        <ul className="flex flex-wrap xs:flex-row gap-4 w-full xs:ml-auto items-center xs:items-center text-grayLight">
+        <ul className="flex xs:flex-row flex-col gap-4 md:gap-12 md:ml-auto items-center text-grayLight">
           <li>
             <Link href="/" className="hover:text-blue">
               Home
