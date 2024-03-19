@@ -10,7 +10,10 @@ export default function Info({ cards }) {
               Welcome to a Transformative
             </span>
             <span className="text-clampThird font-extrabold">
-              Journey with Wisdom Coaching Classes
+              Journey with{' '}
+              <span className="underline decoration-2 underline-offset-8 decoration-wavy decoration-pink-600">
+                Wisdom Coaching Classes 🚀
+              </span>
             </span>
           </h2>
         </div>

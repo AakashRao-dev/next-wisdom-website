@@ -1,7 +1,7 @@
 export default function Courses({ courses }) {
   return (
     <section
-      className="bg-blueLight flex flex-col justify-center items-center gap-16 pt-16 pb-32 px-8 overflow-hidden relative"
+      className="bg-blueLight flex flex-col justify-center items-center gap-16 pt-16 md:pb-32 pb-44 px-8 overflow-hidden relative"
       id="courses"
     >
       <h2 className="text-3xl font-bold text-black">Courses Available</h2>
@@ -23,7 +23,7 @@ export default function Courses({ courses }) {
       </div>
 
       <div className="bg-blueDark text-white w-full py-1 rounded overflow-hidden absolute bottom-0">
-        <p className="relative animate-move flex gap-6 text-base">
+        <p className="relative animate-move flex gap-6 text-base text-nowrap">
           <span className="py-1 text-center">
             External Exam: IEO, IMO, NCO, NSO, NTSE, Concept building and Mental
             Maths
@@ -35,11 +35,11 @@ export default function Courses({ courses }) {
         </p>
       </div>
 
-      <div className="absolute top-4 left-2 lg:top-10 lg:left-10 bg-blue text-white text-clampSecond px-8 py-2 rounded-xl font-semibold tracking-wide animate-bounce">
+      <div className="absolute top-4 left-2 lg:top-10 lg:left-10 bg-pink-600 text-white text-clampSecond px-8 py-2 rounded-xl font-semibold tracking-wide animate-bounce">
         JEE Prep
       </div>
 
-      <div className="absolute top-4 right-2 lg:top-10 lg:right-10 bg-blue text-white text-clampSecond px-8 py-2 rounded-xl font-semibold tracking-wide animate-bounce">
+      <div className="absolute top-4 right-2 lg:top-10 lg:right-10 bg-pink-600 text-white text-clampSecond px-8 py-2 rounded-xl font-semibold tracking-wide animate-bounce">
         NEET Prep
       </div>
     </section>

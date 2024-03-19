@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function GetInTouch() {
   return (
-    <section className="bg-white" id="get-in-touch">
+    <section className="bg-white pb-12" id="get-in-touch">
       <div className="bg-white w-[90%] mx-auto flex sm:flex-row flex-col justify-between items-center sm:gap-12 xs:gap-6 gap-0 py-8 px-8 text-center sm:text-left">
         <div className="flex flex-col gap-9">
           <h2 className="sm:text-5xl text-4xl font-bold text-black flex flex-col gap-2">

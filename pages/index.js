@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import { coursesData } from '@/data/coursesData';
 import { testimonialsData } from '@/data/testimonialsData';
 import { cardsData } from '@/data/cardsData';
+import Accordian from '@/components/Accordian';
 
 const Home = props => {
   return (
@@ -60,6 +61,7 @@ const Home = props => {
       <Courses courses={props.courses} />
       <Testimonials testimonials={props.testimonials} />
       <GetInTouch />
+      <Accordian />
       <Footer />
     </>
   );

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBars,
-  faEnvelope,
-  faPhone,
   faXmark,
+  faPhone,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { signOut, useSession } from 'next-auth/react';
 
@@ -18,7 +18,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky md:top-0 md:z-30 shadow-lg bg-white z-[100]">
+    <header className="sticky md:top-0 md:z-30 shadow-md bg-white z-[100]">
       <div className="bg-blue p-3">
         <div className="sm:w-[90%] sm:mx-auto flex xs:flex-row flex-col items-end gap-6 relative">
           <p className="ml-auto">

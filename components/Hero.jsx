@@ -1,8 +1,17 @@
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAsterisk, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Lottie from 'react-lottie';
 import * as animationData from '../public/launch.json';
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const hideDiv = () => {
+    setIsVisible(false);
+  };
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -39,10 +48,36 @@ export default function Hero() {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="hidden md:block">
           <Lottie options={defaultOptions} className="h-[550px] shrink-0" />
         </div>
       </div>
+
+      {isVisible && (
+        <div className="bg-blueDark p-2 text-white">
+          <div className="w-[89%] mx-auto p-4 md:p-3 flex flex-col md:flex-row gap-4 justify-between items-center overflow-hidden relative">
+            <p className="font-semibold relative animate-move flex items-center gap-8 text-nowrap">
+              <span>
+                Crash course for 10th and 12th Maths, Concept building classes
+                for 6 th to 8th. New session begins from April 1st 2024
+              </span>
+              <span>
+                <FontAwesomeIcon icon={faAsterisk} className="mr-1" />
+                <FontAwesomeIcon icon={faAsterisk} />
+              </span>
+              <span>9 to 12 Crash Course Available</span>
+            </p>
+
+            <button
+              className="bg-white px-2 py-1 text-sm text-black absolute right-0"
+              style={{ borderRadius: '100%' }}
+              onClick={hideDiv}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
